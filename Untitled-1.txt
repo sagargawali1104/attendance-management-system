@@ -1,0 +1,21 @@
+import csv
+
+# Student list
+students = ["Rahul", "Sagar", "Amit"]
+
+# Create CSV file
+with open("attendance.csv", mode="w", newline="") as file:
+
+    writer = csv.writer(file)
+
+    # Header row
+    writer.writerow(["Student Name", "Attendance"])
+
+    # Take attendance input
+    for student in students:
+
+        attendance = input(f"Enter attendance for {student} (Present/Absent): ")
+
+        writer.writerow([student, attendance])
+
+print("\nAttendance saved successfully.")
